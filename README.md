@@ -24,3 +24,20 @@ Responsive Design: Ensure that the web application is responsive and mobile-frie
 
 pages -- home , about , contact_us , login/signup ,  teams --> events,todos,file sharing,chat 
 
+ Models:
+    usermodel :
+            _id , username , password , email , role 
+    pagemodel :
+            _id , admin[user_id] , title , description , subscribers[user_id] extra : discussion []
+    blogsmodel : 
+            _id , user_id , page_id , image , title , content ,  
+
+ Routes:
+    userRoutes : 
+            login , register , logout -> main
+    pageRoutes :
+            all_pages[admin_page,user_page] , all_page/:id , delete[admin:role] , patch[admin:role] , create
+    blogRoutes : 
+            all_blogs[page] , all_blogs/:id , delete , patch , create
+
+    
